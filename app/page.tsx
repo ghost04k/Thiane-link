@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Instagram, Phone } from "lucide-react";
+import { Instagram, Phone, Youtube } from "lucide-react";
 
 export default function Home() {
   return (
@@ -11,39 +11,37 @@ export default function Home() {
 
           {/* Carte principale */}
           <article className="relative bg-gradient-to-b from-[#0B0910] via-[#050308] to-black border border-[#F4D03F]/30 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.7)] px-6 py-7 md:px-8 md:py-9 space-y-7">
-            {/* En-tête : photo + identité */}
+
+            {/* En-tête : photo + nom */}
             <header className="flex flex-col items-center text-center gap-4">
               <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-[#F4D03F]/80 shadow-[0_0_30px_rgba(244,208,63,0.35)]">
-                {/* Ta photo : /public/pp.jpg */}
-              <Image
-                src="/pp.JPG"          // PAS "public/pp.jpg"
-                alt="Portrait de Thiane NDIAYE"
-                fill
-                priority
-                sizes="128px"
-                className="object-cover"
-              />
-
-            </div>
+                <Image
+                  src="/pp.jpg"
+                  alt="Portrait de Thiane NDIAYE"
+                  fill
+                  priority
+                  sizes="128px"
+                  className="object-cover"
+                />
+              </div>
 
               <div className="space-y-2">
                 <h1 className="text-2xl md:text-3xl font-semibold tracking-tight font-serif">
                   Thiane NDIAYE
                 </h1>
 
+                {/* Executive Coach (ICF supprimé) */}
                 <div className="inline-flex items-center gap-2 rounded-full border border-[#F4D03F]/40 bg-[#151017]/80 px-3 py-1">
                   <span className="h-2 w-2 rounded-full bg-[#F4D03F]" />
-                  <p className="text-xs md:text-sm text-slate-100">
-                    Executive Coach{" "}
-                    <span className="text-slate-300">(certification ICF en cours)</span>
-                  </p>
+                  <p className="text-xs md:text-sm text-slate-100">Executive Coach</p>
                 </div>
               </div>
             </header>
 
             {/* Liens principaux */}
             <section className="space-y-3">
-              {/* CTA principal : WhatsApp */}
+
+              {/* CTA WhatsApp */}
               <a
                 href="https://wa.me/33642587321"
                 target="_blank"
@@ -66,7 +64,26 @@ export default function Home() {
                 </span>
               </a>
 
-              {/* Lien Instagram */}
+              {/* YouTube */}
+              <a
+                href="https://youtube.com/@youbeyoupodcast?si=9U3oZSnGfxNuaqZF"
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center justify-between w-full px-5 py-3.5 rounded-2xl bg-[#140B10]/90 border border-[#F4D03F]/40 hover:border-[#F4D03F]/70 hover:bg-[#1E1017] transition-all"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex items-center justify-center rounded-full bg-[#F4D03F]/10 p-1.5">
+                    <Youtube className="w-5 h-5" />
+                  </span>
+                  <div className="flex flex-col text-left">
+                    <span className="text-sm font-medium">Chaîne YouTube</span>
+                    <span className="text-xs text-slate-300">You Be You Podcast</span>
+                  </div>
+                </div>
+                <span className="text-xs text-[#F4D03F]/90 group-hover:text-[#F4D03F]">Regarder</span>
+              </a>
+
+              {/* Instagram */}
               <a
                 href="https://www.instagram.com/youbeyoupodcasts?igsh=MWo0cHJreDZjN3k4NA=="
                 target="_blank"
@@ -93,7 +110,7 @@ export default function Home() {
               <div className="h-px w-full bg-gradient-to-r from-transparent via-[#F4D03F]/50 to-transparent" />
             </div>
 
-            {/* Texte de présentation */}
+            {/* Texte présentation */}
             <section className="space-y-4 text-sm md:text-[15px] leading-relaxed text-slate-200">
               <p>
                 Ancienne Directrice Commerciale dans l’imagerie médicale, j’ai 12 ans
@@ -105,30 +122,36 @@ export default function Home() {
                 du leadership et du développement personnel auprès de la diaspora ouest-africaine.
               </p>
               <p>
-                Sénégalaise, passionnée de cultures et de rencontres, je parle 5 langues et ai
-                voyagé dans plus de 24 pays. Cette ouverture façonne aujourd’hui ma pratique du
-                coaching, centrée sur l’humain, l’impact et la clarté professionnelle.
+                Sénégalaise, passionnée de cultures et de rencontres, je parle 5 langues et ai voyagé
+                dans plus de 24 pays. Cette ouverture façonne aujourd’hui ma pratique du coaching,
+                centrée sur l’humain, l’impact et la clarté professionnelle.
               </p>
 
               <div className="grid gap-3 md:grid-cols-2">
+
+                {/* J’accompagne (texte modifié) */}
                 <div className="space-y-1.5">
                   <p className="text-xs font-semibold uppercase tracking-wide text-[#F4D03F]">
                     J’accompagne
                   </p>
                   <p className="text-sm">
-                    Jeunes entrepreneurs & salariés, en France et dans la diaspora africaine, en
-                    particulier les femmes.
+                    Entrepreneurs, cadres dirigeants et salariés en France et dans la diaspora
+                    africaine.
                   </p>
                 </div>
 
+                {/* Services (Leadership ajouté) */}
                 <div className="space-y-1.5">
                   <p className="text-xs font-semibold uppercase tracking-wide text-[#F4D03F]">
                     Services
                   </p>
-                  <p className="text-sm">Coaching professionnel • Développement personnel</p>
+                  <p className="text-sm">
+                    Coaching professionnel • Leadership • Développement personnel
+                  </p>
                 </div>
               </div>
 
+              {/* Offres */}
               <div className="space-y-1.5">
                 <p className="text-xs font-semibold uppercase tracking-wide text-[#F4D03F]">
                   Offres
@@ -146,6 +169,7 @@ export default function Home() {
                 You Be You • Coaching &amp; Leadership
               </p>
             </footer>
+
           </article>
         </div>
       </div>
