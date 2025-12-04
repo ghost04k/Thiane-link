@@ -1,65 +1,153 @@
 import Image from "next/image";
+import { Instagram, Phone } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="min-h-screen bg-gradient-to-br from-[#050308] via-black to-[#1a1205] text-slate-100 flex items-center justify-center px-4 py-10">
+      <div className="w-full max-w-xl">
+        <div className="relative">
+          {/* Halo doré derrière la carte */}
+          <div className="absolute -inset-1 bg-gradient-to-tr from-[#F4D03F]/40 via-transparent to-[#F39C12]/40 blur-2xl opacity-70" />
+
+          {/* Carte principale */}
+          <article className="relative bg-gradient-to-b from-[#0B0910] via-[#050308] to-black border border-[#F4D03F]/30 rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.7)] px-6 py-7 md:px-8 md:py-9 space-y-7">
+            {/* En-tête : photo + identité */}
+            <header className="flex flex-col items-center text-center gap-4">
+              <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-[#F4D03F]/80 shadow-[0_0_30px_rgba(244,208,63,0.35)]">
+                {/* Ta photo : /public/pp.jpg */}
+                <Image
+                  src="/pp.jpg" // ou /pp.jpeg suivant ton fichier
+                  alt="Portrait de Thiane NDIAYE"
+                  fill
+                  priority
+                  sizes="128px"
+                  className="object-cover"
+                />
+              </div>
+
+              <div className="space-y-2">
+                <h1 className="text-2xl md:text-3xl font-semibold tracking-tight font-serif">
+                  Thiane NDIAYE
+                </h1>
+
+                <div className="inline-flex items-center gap-2 rounded-full border border-[#F4D03F]/40 bg-[#151017]/80 px-3 py-1">
+                  <span className="h-2 w-2 rounded-full bg-[#F4D03F]" />
+                  <p className="text-xs md:text-sm text-slate-100">
+                    Executive Coach{" "}
+                    <span className="text-slate-300">(certification ICF en cours)</span>
+                  </p>
+                </div>
+              </div>
+            </header>
+
+            {/* Liens principaux */}
+            <section className="space-y-3">
+              {/* CTA principal : WhatsApp */}
+              <a
+                href="https://wa.me/33642587321"
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center justify-between w-full px-5 py-3.5 rounded-2xl bg-gradient-to-r from-[#F4D03F] via-[#F5B041] to-[#D68910] text-black font-medium shadow-[0_10px_30px_rgba(244,208,63,0.45)] hover:shadow-[0_14px_40px_rgba(244,208,63,0.6)] transition-all"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex items-center justify-center rounded-full bg-black/10 p-1.5">
+                    <Phone className="w-5 h-5" />
+                  </span>
+                  <div className="flex flex-col text-left">
+                    <span>Séance Découverte</span>
+                    <span className="text-xs opacity-80">
+                      45 minutes — Réserver sur WhatsApp
+                    </span>
+                  </div>
+                </div>
+                <span className="text-xs uppercase tracking-wide opacity-80 group-hover:opacity-100">
+                  Réserver
+                </span>
+              </a>
+
+              {/* Lien Instagram */}
+              <a
+                href="https://www.instagram.com/youbeyoupodcasts?igsh=MWo0cHJreDZjN3k4NA=="
+                target="_blank"
+                rel="noreferrer"
+                className="group flex items-center justify-between w-full px-5 py-3.5 rounded-2xl bg-[#0C0913]/90 border border-[#F4D03F]/40 hover:border-[#F4D03F]/70 hover:bg-[#15101F] transition-all"
+              >
+                <div className="flex items-center gap-3">
+                  <span className="inline-flex items-center justify-center rounded-full bg-[#F4D03F]/10 p-1.5">
+                    <Instagram className="w-5 h-5" />
+                  </span>
+                  <div className="flex flex-col text-left">
+                    <span className="text-sm font-medium">Podcast You Be You</span>
+                    <span className="text-xs text-slate-300">@youbeyoupodcasts</span>
+                  </div>
+                </div>
+                <span className="text-xs text-[#F4D03F]/90 group-hover:text-[#F4D03F]">
+                  Voir
+                </span>
+              </a>
+            </section>
+
+            {/* Séparateur doré */}
+            <div className="relative pt-3">
+              <div className="h-px w-full bg-gradient-to-r from-transparent via-[#F4D03F]/50 to-transparent" />
+            </div>
+
+            {/* Texte de présentation */}
+            <section className="space-y-4 text-sm md:text-[15px] leading-relaxed text-slate-200">
+              <p>
+                Ancienne Directrice Commerciale dans l’imagerie médicale, j’ai 12 ans
+                d’expérience dans le commerce international.
+              </p>
+              <p>
+                Fondatrice du podcast{" "}
+                <span className="font-medium text-[#F4D03F]">You Be You</span>, j’explore les thèmes
+                du leadership et du développement personnel auprès de la diaspora ouest-africaine.
+              </p>
+              <p>
+                Sénégalaise, passionnée de cultures et de rencontres, je parle 5 langues et ai
+                voyagé dans plus de 24 pays. Cette ouverture façonne aujourd’hui ma pratique du
+                coaching, centrée sur l’humain, l’impact et la clarté professionnelle.
+              </p>
+
+              <div className="grid gap-3 md:grid-cols-2">
+                <div className="space-y-1.5">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-[#F4D03F]">
+                    J’accompagne
+                  </p>
+                  <p className="text-sm">
+                    Jeunes entrepreneurs & salariés, en France et dans la diaspora africaine, en
+                    particulier les femmes.
+                  </p>
+                </div>
+
+                <div className="space-y-1.5">
+                  <p className="text-xs font-semibold uppercase tracking-wide text-[#F4D03F]">
+                    Services
+                  </p>
+                  <p className="text-sm">Coaching professionnel • Développement personnel</p>
+                </div>
+              </div>
+
+              <div className="space-y-1.5">
+                <p className="text-xs font-semibold uppercase tracking-wide text-[#F4D03F]">
+                  Offres
+                </p>
+                <ul className="list-disc list-inside space-y-1">
+                  <li>Séance Découverte — 45 minutes</li>
+                  <li>Programme de 5 séances d’accompagnement personnalisé</li>
+                </ul>
+              </div>
+            </section>
+
+            {/* Footer */}
+            <footer className="pt-1">
+              <p className="text-[11px] text-slate-400 text-center">
+                You Be You • Coaching &amp; Leadership
+              </p>
+            </footer>
+          </article>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </div>
+    </main>
   );
 }
