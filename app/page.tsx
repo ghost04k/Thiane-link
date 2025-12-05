@@ -53,8 +53,8 @@ export default function Home() {
                     📄
                   </span>
                   <div className="flex flex-col text-left">
-                    <span>Formulaire de contact</span>
-                    <span className="text-xs opacity-80">Réponse sous 24h</span>
+                    <span>Réserve ta séance découverte</span>
+                    <span className="text-xs opacity-80">Formulaire</span>
                   </div>
                 </div>
                 <span className="text-xs uppercase tracking-wide opacity-80 group-hover:opacity-100">
