@@ -16,7 +16,7 @@ export default function Home() {
             <header className="flex flex-col items-center text-center gap-4">
               <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-[#F4D03F]/80 shadow-[0_0_30px_rgba(244,208,63,0.35)]">
                 <Image
-                  src="/pp.jpg"
+                  src="/pp.JPG"
                   alt="Portrait de Thiane NDIAYE"
                   fill
                   priority
